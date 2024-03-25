@@ -21,7 +21,7 @@ export default class Items extends cc.Component {
     @property(cc.Node) colorPicker: cc.Node = null;
 
 
-    private curIndex: number = -1;
+    private curIndex: number = 0;
     private timeLoop: number = 500;
     private tween: cc.Tween = null;
     private scaleHandDefault: number = 1;
@@ -30,9 +30,7 @@ export default class Items extends cc.Component {
     private isDoneState1: boolean = false;
     private posHand: cc.Vec3[] = [
         cc.v3(-90, -200, 0),
-        cc.v3(400, -200, 0),
-        cc.v3(-90, -750, 0),
-        cc.v3(400, -750, 0)
+        cc.v3(400, -200, 0)
     ];
 
     protected onLoad(): void {
@@ -114,7 +112,7 @@ export default class Items extends cc.Component {
 
     playItemAnimation() {
         if (this.isDoneState1) return;
-        this.curIndex = (this.curIndex + 1) % 4;
+        this.curIndex = (this.curIndex + 1) % 2;
         this.tween = cc.tween(this.hand)
             .to(0.2, { position: this.posHand[this.curIndex] })
             .to(0.1, {})
