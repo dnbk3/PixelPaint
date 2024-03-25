@@ -79,7 +79,7 @@ export default class Items extends cc.Component {
         this.itemSelected.bg.active = false;
 
         cc.tween(this.itemSelected.body)
-            .to(0.3, { scale: 2 })
+            .to(0.3, { scale: 1.25 })
             .call(() => {
                 const vector = this.itemSelected.posTarget.position.sub(this.itemSelected.body.position);
                 const anchorx = (vector.x / this.itemSelected.body.width) * 0.5 + 0.5;
