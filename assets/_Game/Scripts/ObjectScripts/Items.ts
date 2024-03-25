@@ -29,8 +29,8 @@ export default class Items extends cc.Component {
 
     private isDoneState1: boolean = false;
     private posHand: cc.Vec3[] = [
-        cc.v3(-90, -200, 0),
-        cc.v3(400, -200, 0)
+        cc.v3(165, -200, 0),
+        cc.v3(165, -900, 0)
     ];
 
     protected onLoad(): void {
